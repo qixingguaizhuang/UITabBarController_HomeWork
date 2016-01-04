@@ -22,7 +22,6 @@
 		49A81D691C3A64EC00ABA5AC /* x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A81D661C3A64EC00ABA5AC /* x.png */; };
 		49A81D6B1C3A674700ABA5AC /* t.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A81D6A1C3A674700ABA5AC /* t.png */; };
 		49A81D6D1C3A67C500ABA5AC /* k.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A81D6C1C3A67C500ABA5AC /* k.png */; };
-		49A81D731C3A6A9700ABA5AC /* Contacts.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49A81D721C3A6A9700ABA5AC /* Contacts.plist */; };
 		49A81DAD1C3A765700ABA5AC /* 10.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 49A81D941C3A765700ABA5AC /* 10.jpg */; };
 		49A81DAE1C3A765700ABA5AC /* 11.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 49A81D951C3A765700ABA5AC /* 11.jpg */; };
 		49A81DAF1C3A765700ABA5AC /* 12.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 49A81D961C3A765700ABA5AC /* 12.jpg */; };
@@ -55,6 +54,9 @@
 		49A81DD41C3A8EE300ABA5AC /* d3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 49A81DD11C3A8EE300ABA5AC /* d3.jpg */; };
 		49A81DD51C3A8EE300ABA5AC /* d2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 49A81DD21C3A8EE300ABA5AC /* d2.jpg */; };
 		49A81DD61C3A8EE300ABA5AC /* d1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 49A81DD31C3A8EE300ABA5AC /* d1.jpg */; };
+		F3EAB42A1C3AD83700DA8871 /* girl.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F3EAB4291C3AD83700DA8871 /* girl.jpg */; };
+		F3EAB42C1C3AD9F500DA8871 /* head.png in Resources */ = {isa = PBXBuildFile; fileRef = F3EAB42B1C3AD9F500DA8871 /* head.png */; };
+		F3EAB4301C3ADACC00DA8871 /* p.png in Resources */ = {isa = PBXBuildFile; fileRef = F3EAB42F1C3ADACC00DA8871 /* p.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,7 +102,6 @@
 		49A81D661C3A64EC00ABA5AC /* x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = x.png; sourceTree = "<group>"; };
 		49A81D6A1C3A674700ABA5AC /* t.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = t.png; sourceTree = "<group>"; };
 		49A81D6C1C3A67C500ABA5AC /* k.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = k.png; sourceTree = "<group>"; };
-		49A81D721C3A6A9700ABA5AC /* Contacts.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Contacts.plist; sourceTree = "<group>"; };
 		49A81D941C3A765700ABA5AC /* 10.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 10.jpg; sourceTree = "<group>"; };
 		49A81D951C3A765700ABA5AC /* 11.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 11.jpg; sourceTree = "<group>"; };
 		49A81D961C3A765700ABA5AC /* 12.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 12.jpg; sourceTree = "<group>"; };
@@ -134,6 +135,9 @@
 		49A81DD11C3A8EE300ABA5AC /* d3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = d3.jpg; sourceTree = "<group>"; };
 		49A81DD21C3A8EE300ABA5AC /* d2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = d2.jpg; sourceTree = "<group>"; };
 		49A81DD31C3A8EE300ABA5AC /* d1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = d1.jpg; sourceTree = "<group>"; };
+		F3EAB4291C3AD83700DA8871 /* girl.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = girl.jpg; sourceTree = "<group>"; };
+		F3EAB42B1C3AD9F500DA8871 /* head.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = head.png; path = "卡通头像/head.png"; sourceTree = "<group>"; };
+		F3EAB42F1C3ADACC00DA8871 /* p.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,16 +188,18 @@
 		496826421C3A56410096BD51 /* UITabBarController_HomeWork */ = {
 			isa = PBXGroup;
 			children = (
+				F3EAB42B1C3AD9F500DA8871 /* head.png */,
 				49A81D931C3A765700ABA5AC /* 卡通头像 */,
 				49A81D641C3A64EC00ABA5AC /* i.png */,
 				49A81D651C3A64EC00ABA5AC /* h.png */,
+				F3EAB42F1C3ADACC00DA8871 /* p.png */,
+				F3EAB4291C3AD83700DA8871 /* girl.jpg */,
 				49A81D6C1C3A67C500ABA5AC /* k.png */,
 				49A81D6A1C3A674700ABA5AC /* t.png */,
 				49A81D661C3A64EC00ABA5AC /* x.png */,
 				49A81DD11C3A8EE300ABA5AC /* d3.jpg */,
 				49A81DD21C3A8EE300ABA5AC /* d2.jpg */,
 				49A81DD31C3A8EE300ABA5AC /* d1.jpg */,
-				49A81D721C3A6A9700ABA5AC /* Contacts.plist */,
 				496826461C3A56410096BD51 /* AppDelegate.h */,
 				496826471C3A56410096BD51 /* AppDelegate.m */,
 				4968267E1C3A5DF90096BD51 /* Third */,
@@ -427,6 +433,7 @@
 				49A81D691C3A64EC00ABA5AC /* x.png in Resources */,
 				49A81D681C3A64EC00ABA5AC /* h.png in Resources */,
 				49A81DB01C3A765700ABA5AC /* 19.jpg in Resources */,
+				F3EAB42C1C3AD9F500DA8871 /* head.png in Resources */,
 				49A81DD61C3A8EE300ABA5AC /* d1.jpg in Resources */,
 				49A81DC21C3A765700ABA5AC /* 65.jpg in Resources */,
 				49A81DBA1C3A765700ABA5AC /* 52.jpg in Resources */,
@@ -434,10 +441,12 @@
 				49A81DB11C3A765700ABA5AC /* 20.jpg in Resources */,
 				49A81DBF1C3A765700ABA5AC /* 61.jpg in Resources */,
 				49A81DC51C3A765700ABA5AC /* 68.jpg in Resources */,
+				F3EAB4301C3ADACC00DA8871 /* p.png in Resources */,
 				496826531C3A56410096BD51 /* LaunchScreen.storyboard in Resources */,
 				496826501C3A56410096BD51 /* Assets.xcassets in Resources */,
 				49A81DBB1C3A765700ABA5AC /* 54.jpg in Resources */,
 				49A81D6B1C3A674700ABA5AC /* t.png in Resources */,
+				F3EAB42A1C3AD83700DA8871 /* girl.jpg in Resources */,
 				49A81DC11C3A765700ABA5AC /* 63.jpg in Resources */,
 				49A81DB21C3A765700ABA5AC /* 29.jpg in Resources */,
 				49A81DB91C3A765700ABA5AC /* 51.jpg in Resources */,
@@ -447,7 +456,6 @@
 				49A81DD51C3A8EE300ABA5AC /* d2.jpg in Resources */,
 				49A81DAE1C3A765700ABA5AC /* 11.jpg in Resources */,
 				49A81DB61C3A765700ABA5AC /* 40.jpg in Resources */,
-				49A81D731C3A6A9700ABA5AC /* Contacts.plist in Resources */,
 				49A81DB81C3A765700ABA5AC /* 45.jpg in Resources */,
 				49A81DC31C3A765700ABA5AC /* 66.jpg in Resources */,
 				4968264E1C3A56410096BD51 /* Main.storyboard in Resources */,

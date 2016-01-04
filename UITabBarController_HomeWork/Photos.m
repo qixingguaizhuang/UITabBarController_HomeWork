@@ -7,12 +7,14 @@
 //
 
 #import "Photos.h"
+#define ImageCount self.arrOfImages.count
 
 @interface Photos ()<UIScrollViewDelegate>
 
 @property (nonatomic, retain)UIScrollView *scrooll;
 @property (nonatomic, retain)UIPageControl *page;
 @property (nonatomic, retain)NSMutableArray * arrOfImages;
+@property (nonatomic, strong) NSTimer *timer;
 
 @end
 
@@ -24,6 +26,7 @@
     [_scrooll release];
     [_page release];
     [_arrOfImages release];
+    [_timer release];
     [super dealloc];
 }
 
@@ -35,9 +38,9 @@
         
         self.arrOfImages = [NSMutableArray arrayWithArray:images];
        
-        /*将第一张图片放到图片数组最后*/
+        /* 将第一张图片放到图片数组最后 */
        [self.arrOfImages addObject:self.arrOfImages.firstObject];
-        /* 将第三张图片放到轮播第一*/
+        /* 将第三张图片放到轮播第一 */
        [self.arrOfImages insertObject:[self.arrOfImages objectAtIndex:self.arrOfImages.count - 2] atIndex:0];
         
         
@@ -62,6 +65,8 @@
     
     self.scrooll.contentSize =CGSizeMake(frame.size.width * self.arrOfImages.count, frame.size.height);
     
+    /** 翻页效果*/
+    
     self.scrooll.pagingEnabled = YES;
     self.scrooll.bounces = YES;
     
@@ -70,7 +75,7 @@
     
     [self createImageViewsWithFrame:frame];
     [self  CreatePageViewWithFrame:frame];
-    
+    [self setUpTimer];
     self.scrooll.delegate = self;
     
 }
@@ -100,6 +105,7 @@
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
     
+    self.page.currentPage = scrollView.contentOffset.x /400;
     
     if (scrollView.contentOffset.x == 0) {
         
@@ -109,13 +115,40 @@
     if (scrollView.contentOffset.x == self.frame.size.width * (self.arrOfImages.count - 1)) {
         [self.scrooll setContentOffset:CGPointMake(self.frame.size.width * (self.arrOfImages.count - 4), 0)];
     }
-    
-    
-    
 }
 
 
+//
+//// 开始拖拽的时候调用
+//
+//- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
+//    [self.timer invalidate];
+//
+//}
 
+
+// - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+//        //开启定时器
+//         [self addTimer];
+//    }
+//
+//     /***  开启定时器 */
+//
+// - (void)addTimer{
+//    
+//         self.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(nextImage) userInfo:nil repeats:YES];
+//     }
+//
+//    /***  关闭定时器*/
+//
+// - (void)removeTimer{
+//     
+//[self.timer invalidate];
+//     
+// }
+//
+//
+//
 
 
 
@@ -125,7 +158,11 @@
 - (void)CreatePageViewWithFrame:(CGRect)fram{
     
     self.page = [[UIPageControl alloc] initWithFrame:CGRectMake(0, 0, fram.size.width / 2, 40)];
-    self.page.center = CGPointMake(fram.size.width/2, fram.size.height - 20);
+    self.page.pageIndicatorTintColor = [UIColor redColor];
+    self.page.currentPageIndicatorTintColor = [UIColor cyanColor];
+    
+    self.page.center = CGPointMake(fram.size.width/2, fram.size.height + 20 );
+    
     [self addSubview:self.page];
     [_page release];
   
@@ -140,20 +177,29 @@
 
 - (void)pageAction:(UIPageControl *)page{
     
-    
     // 设置 scrollView 的偏移量  contentOffset.x 结构体只能用 结构体
     
-    // self.Scroll.contentOffset = CGPointMake(page.currentPage*300, 0);
-    
-    // 带动画
-    
-    [self.scrooll setContentOffset:CGPointMake(page.currentPage * 300, 0) animated:YES];
+    [self.scrooll setContentOffset:CGPointMake(page.currentPage * 400, 0) animated:YES];
     
 }
 
 
+/* 自动轮播 */
+
+- (void)setUpTimer{
+    
+    self.timer = [NSTimer timerWithTimeInterval:2.0 target:self selector:@selector(timerchanged) userInfo:nil repeats:YES];
+    [[NSRunLoop currentRunLoop]addTimer:self.timer forMode:NSRunLoopCommonModes];
+    
+}
 
 
+- (void)timerchanged{
+    NSInteger page = (self.page.currentPage + 1) % ImageCount;
+    self.page.currentPage = page;
+    [self pageAction:self.page];
+    
+}
 
 
 

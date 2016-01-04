@@ -63,6 +63,22 @@
     ViewController *vc = [[ViewController alloc]init];
     UINavigationController *first = [[UINavigationController alloc]initWithRootViewController:vc];
     vc.navigationItem.title = @"第一页";
+    
+    /* 中间 */
+    UISegmentedControl *seg = [[UISegmentedControl alloc] initWithItems:@[@"消息",@"通话"]];
+    vc.navigationItem.titleView = seg;
+    
+    /**右边*/
+    
+    vc.navigationItem.rightBarButtonItem= [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addAction:)];
+    
+    /** 左边*/
+//    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"girl.jpg"]  style:UIBarButtonItemStylePlain target:self action:@selector(headAction:)];
+    
+    vc.navigationItem.leftBarButtonItem= [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"p"] style:UIBarButtonItemStylePlain target:self action:@selector(headAction:)];
+    
+    
+    
     first.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"消息" image:[UIImage imageNamed:@"i"] tag:100];
     
     
@@ -95,10 +111,17 @@
 
 
 
+- (void)addAction:(UIButton *)button{
+    NSLog(@"添加");
+
+}
 
 
+- (void)headAction:(UIButton *)button{
 
+    NSLog(@"头像");
 
+}
 
 
 
